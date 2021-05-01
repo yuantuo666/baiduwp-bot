@@ -41,6 +41,43 @@ function get(string $url, array $header)
     curl_close($ch);
     return $result;
 }
+function formatSize(float $size, int $times = 0)
+{
+
+    while ($size >= 1024) {
+        $size /= 1024;
+        $times += 1;
+    }
+    switch ($times) {
+        case '0':
+            $unit = ($size == 1) ? 'Byte' : 'Bytes';
+            break;
+        case '1':
+            $unit = 'KB';
+            break;
+        case '2':
+            $unit = 'MB';
+            break;
+        case '3':
+            $unit = 'GB';
+            break;
+        case '4':
+            $unit = 'TB';
+            break;
+        case '5':
+            $unit = 'PB';
+            break;
+        case '6':
+            $unit = 'EB';
+            break;
+        case '7':
+            $unit = 'ZB';
+            break;
+        default:
+            $unit = 'Unknow';
+    }
+    return sprintf('%.2f', $size) . $unit;
+}
 
 $chat_id = $data['message']['chat']['id'];
 $message_text = $data['message']['text'];
@@ -57,7 +94,7 @@ if (preg_match("/pan.baidu.com/", $message_text)) {
         exit;
     }
 
-    if (preg_match("/提取码：?.? *(\w{4})/", $message_text, $matches))
+    if (preg_match("/提取码[：: ]*(\w{4})/", $message_text, $matches))
         $pwd = $matches[1];
     elseif (preg_match("/@(\w{4})/", $message_text, $matches))
         $pwd = $matches[1];
@@ -100,11 +137,11 @@ if (preg_match("/pan.baidu.com/", $message_text)) {
                 elseif ($fileinfo["error"] == 0) {
                     //success
                     $filename = $fileinfo["filedata"]["filename"];
-                    $size = $fileinfo["filedata"]["size"];
+                    $size = formatSize($fileinfo["filedata"]["size"]);
                     $uploadtime = $fileinfo["filedata"]["uploadtime"];
                     $md5 = $fileinfo["filedata"]["md5"];
                     $directlink = $fileinfo["directlink"];
-                    $message = "Filename: <b>$filename</b>\nSize: <b>$size</b>\nLink: <pre>$directlink</pre>";
+                    $message = "Filename: <b>$filename</b>\nSize: <b>$size</b>\nLink: <pre>$directlink</pre>\r<a href=\"https://imwcr.cn/api/bdwp/?help\">How to use download link</a>";
                 } else {
                     //wrong
                     $message = "Error happened! {$fileinfo["title"]}:{$fileinfo["message"]}";
