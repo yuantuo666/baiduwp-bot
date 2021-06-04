@@ -105,7 +105,7 @@ if (preg_match("/pan.baidu.com/", $message_text)) {
     $header = ["User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.514.1919.810 Safari/537.36"];
     $data = "surl=$surl&pwd=$pwd";
     $filelist = post(host . "?m=getlist", $data, $header);
-    echo ($filelist);
+    // echo ($filelist);
     $filelist = json_decode($filelist, true);
     if ($filelist == null) $message = "Server error";
     elseif ($filelist["error"] == 0) {
@@ -126,12 +126,13 @@ if (preg_match("/pan.baidu.com/", $message_text)) {
                 $surl = "1" . $rootdata["surl_1"];
 
                 $SVIP_BDUSS = SVIP_BDUSS;
+                $User_Agent = User_Agent;
 
-                $data = "fs_id=$fs_id&time=$timestamp&sign=$sign&randsk=$randsk&shareid=$share_id&uk=$uk&app_id=250528&SVIP_BDUSS=$SVIP_BDUSS&surl=$surl";
+                $data = "fs_id=$fs_id&time=$timestamp&sign=$sign&randsk=$randsk&shareid=$share_id&uk=$uk&app_id=250528&SVIP_BDUSS=$SVIP_BDUSS&surl=$surl&User_Agent=$User_Agent";
 
                 $header = ["User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.514.1919.810 Safari/537.36"];
                 $fileinfo = post(host . "?m=getlink", $data, $header);
-                echo ($fileinfo);
+                // echo ($fileinfo);
                 $fileinfo = json_decode($fileinfo, true);
                 if ($fileinfo == null) $message = "Server error";
                 elseif ($fileinfo["error"] == 0) {
@@ -141,7 +142,8 @@ if (preg_match("/pan.baidu.com/", $message_text)) {
                     $uploadtime = $fileinfo["filedata"]["uploadtime"];
                     $md5 = $fileinfo["filedata"]["md5"];
                     $directlink = $fileinfo["directlink"];
-                    $message = "Filename: <b>$filename</b>\nSize: <b>$size</b>\nLink: <pre>$directlink</pre>\r<a href=\"https://imwcr.cn/api/bdwp/?help\">How to use download link</a>";
+                    $user_agent = $fileinfo["user_agent"];
+                    $message = "Filename: <b>$filename</b>\nSize: <b>$size</b>\nUser-Agent: <pre>$user_agent</pre>\nLink: <pre>$directlink</pre>\n\n<a href=\"https://imwcr.cn/api/telegram/help.html?UA=$user_agent\">How to use download link</a>";
                 } else {
                     //wrong
                     $message = "Error happened! {$fileinfo["title"]}:{$fileinfo["message"]}";

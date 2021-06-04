@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-default@4.0.2/default.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.2/dist/js/bootstrap.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.14.0/dist/sweetalert2.min.js"></script>
+    <title>Baiduwp-bot Using Help</title>
+    <style>
+        .logo-img {
+            width: 1.1em;
+            position: relative;
+            top: -3px;
+            margin-right: .5rem;
+        }
+
+        .anchor {
+            vertical-align: top;
+        }
+
+        a.btn {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark mb-4">
+        <div class="container">
+            <a class="navbar-brand" href="help.html">
+                <img src="logo.svg" class="img-fluid rounded logo-img" alt="LOGO">baiduwp-bot</a>
+            </svg>
+            <button class="navbar-toggler border-0" type="button" data-toggle="collapse"
+                data-target="#collpase-bar"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="collpase-bar">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="help.html">💡 Help</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://github.com/yuantuo666/baiduwp-bot"
+                            target="_blank">🌈 Github</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://imwcr.cn/?donate" target="_blank">💴
+                            Donate</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="bg-light p-5 rounded">
+            <div class="mx-auto">
+                <h1>Baiduwp-bot Using Help</h1>
+                <h2>Get Download Link <small>获取下载链接</small></h2>
+                <p>Send your pan.baidu.com share link to Telegram bot. <br />
+                    将你的百度网盘下载链接发送给机器人。</p>
+                <p>Remember~ Your share link must be the format below.<br />注意~ 必须链接格式必须为下方所示。</p>
+                <ol>
+                    <li><code>https://pan.baidu.com/s/1otNXu2-z1cp1s_f8Gwp17w  提取码:aaaa</code></li>
+                    <li><code>https://pan.baidu.com/s/1otNXu2-z1cp1s_f8Gwp17w@aaaa</code> (Add '@' before the password
+                        在提取码前加上“@”)</li>
+                </ol>
+                <h2>Download Help <small>下载方法</small></h2>
+                <p>Due to Baidu restrictions, you need to modify the browser "User Agent" before downloading. <br />
+                    因百度限制，需修改浏览器 User Agent 后下载。你可以在下方选择你喜欢的方式进行下载。</p>
+                <br />
+                <h2>🇺🇸 English</h2>
+                <section class="normal">
+                    <div id="Motrix">
+                        <h4>Motrix(Free & Recommend)</h4>
+                    </div>
+                    <ol>
+                        <li>Download <b>Motrix</b> from <a href="https://motrix.app/"
+                                target="_blank">https://motrix.app/</a>.</li>
+                        <li>Install and run Motrix.</li>
+                        <li>New task -> Advanced options -> Modify <b>User-Agent</b> to <b class="UA">LogStatistic</b>
+                            -> Paste download link -> Submit</li>
+                    </ol>
+                    <div id="IDM">
+                        <h4>Internet Download Manager</h4>
+                    </div>
+                    <ol>
+                        <li>Options -> Downloads -> User-Angent for manually added downloads -> Type in
+                            <b class="UA">LogStatistic</b>
+                        </li>
+                        <li><b>Copy the download link.</b> -> Add URL (in IDM) -> Paste the link -> OK </li>
+                    </ol>
+                    <div id="Copyright">
+                        <h4>About this project</h4>
+                    </div>
+                    <ol>
+                        <a class="btn btn-primary" href="https://github.com/yuantuo666/baiduwp-bot"
+                            target="_blank">Github repository &raquo;</a>
+                        <a class="btn btn-primary" href="https://imwcr.cn/" target="_blank">Project author: Yuan_Tuo
+                            &raquo;</a>
+                    </ol>
+                </section>
+                <hr />
+                <h2>🇨🇳 中文</h2>
+                <section class="normal">
+                    <div id="Motrix">
+                        <h4>Motrix (推荐)</h4>
+                    </div>
+                    <ol>
+                        <li>前往 <a href="https://motrix.app/" target="_blank">Motrix官网</a> 下载 <b>Motrix</b> 对应版本<br />
+                        </li>
+                        <li>安装后运行 Motrix。</li>
+                        <li>新建任务 -> 高级选项 -> 设置 <b>User-Agent</b> 为 <b class="UA">LogStatistic</b> -> 粘贴下载地址 -> 提交任务</li>
+                    </ol>
+                    <div id="IDM">
+                        <h4>IDM</h4>
+                    </div>
+                    <ol>
+                        <li>选项 -> 下载 -> 手动添加任务时使用的用户代理（UA）-> 填入 <b class="UA">LogStatistic</b></li>
+                        <li><b>复制下载链接</b>，在 IDM 新建任务，粘贴链接即可下载。</li>
+                    </ol>
+                    <div id="Copyright">
+                        <h4>关于此项目</h4>
+                    </div>
+                    <ol>
+                        <li>本项目与PanDownload无关。</li>
+                        <li>本项目仅以学习为目的，不得用于其他用途。</li>
+                        <br />
+                        <a class="btn btn-primary" href="https://github.com/yuantuo666/baiduwp-bot"
+                            target="_blank">Github仓库 &raquo;</a>
+                        <a class="btn btn-primary" href="https://imwcr.cn/" target="_blank">项目作者 Yuan_Tuo &raquo;</a>
+                    </ol>
+                </section>
+            </div>
+        </div>
+        <script>
+            $(() => {
+                var UA = getUrlParam("UA");
+                if (UA !== null && UA !== "") {
+                    $(".UA").text(UA);
+                } else {
+                    $(".UA").text("LogStatistic");
+                }
+            });
+            //获取url中的参数
+            function getUrlParam(name) {
+                var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+                var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+                if (r != null) return encodeURI(r[2]); return null; //返回参数值
+            }
+        </script>
+    </div>
+</body>
+
+</html>

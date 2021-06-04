@@ -14,8 +14,11 @@ Get **a** file download link from share link.<br />
 - enjoy it~
 
 ## How to download
-refer to https://imwcr.cn/api/bdwp/index.php?help<br />
-参考https://imwcr.cn/api/bdwp/index.php?help
+refer to https://imwcr.cn/api/telegram/help.html<br />
+参考https://imwcr.cn/api/telegram/help.html
 
 ## Todo
 - get multi file
+
+## New feature
+- Set your own User-Agent when download file
